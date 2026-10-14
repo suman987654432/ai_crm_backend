@@ -21,7 +21,7 @@ export const createAgent = async (agentData) => {
   if (ai_config) {
     [aiConfig] = await sql`
       INSERT INTO agent_ai_configs (agent_id, llm_provider, llm_model, system_prompt, greeting_message)
-      VALUES (${newAgent.id}, ${ai_config.llm_provider || 'gemini'}, ${ai_config.llm_model || 'gemini-flash'}, ${ai_config.system_prompt || ''}, ${ai_config.greeting_message || ''})
+      VALUES (${newAgent.id}, ${ai_config.llm_provider || 'gemini'}, ${ai_config.llm_model || 'gemini-3.5-flash-lite'}, ${ai_config.system_prompt || ''}, ${ai_config.greeting_message || ''})
       RETURNING *;
     `;
   }
@@ -98,7 +98,7 @@ export const updateAgent = async (id, agentData, orgId = DEFAULT_ORG_ID) => {
   if (ai_config) {
     [aiConfig] = await sql`
       INSERT INTO agent_ai_configs (agent_id, llm_provider, llm_model, system_prompt, greeting_message)
-      VALUES (${id}, ${ai_config.llm_provider || 'gemini'}, ${ai_config.llm_model || 'gemini-flash'}, ${ai_config.system_prompt || ''}, ${ai_config.greeting_message || ''})
+      VALUES (${id}, ${ai_config.llm_provider || 'gemini'}, ${ai_config.llm_model || 'gemini-3.5-flash-lite'}, ${ai_config.system_prompt || ''}, ${ai_config.greeting_message || ''})
       ON CONFLICT (agent_id) 
       DO UPDATE SET
         llm_provider = EXCLUDED.llm_provider,

@@ -1,7 +1,9 @@
 import { sql } from '../../config/database.js';
 import { OpenAIProvider } from '../ai/llm/openaiProvider.js';
+import { GeminiProvider } from '../ai/llm/geminiProvider.js';
 import { SarvamProvider as SarvamTTSProvider } from '../ai/tts/sarvamProvider.js';
 import { SarvamSTTProvider } from '../ai/stt/sarvamProvider.js';
+import logger from '../../utils/logger.js';
 
 // Map of active sessions
 const sessions = new Map();
@@ -15,7 +17,8 @@ export const handleNewConnection = (ws, sessionId) => {
     agentId: null,
     agentConfig: null,
     messages: [], // Conversation history
-    ws
+    ws,
+    ttsStreamer: null
   };
 
   sessions.set(sessionId, sessionState);
@@ -30,19 +33,22 @@ export const handleNewConnection = (ws, sessionId) => {
         await handleUserAudio(sessionState, message.audio);
       } else if (message.type === 'interruption') {
         // User interrupted the TTS playback
-        console.log(`[Session ${sessionId}] Interruption detected`);
+        logger.info(`[Session ${sessionId}] Interruption detected`);
         sendStatus(ws, 'listening');
       }
     } catch (err) {
-      console.error(`[Session ${sessionId}] Error parsing WS message:`, err);
+      logger.error(`[Session ${sessionId}] Error parsing WS message:`, err);
     }
   });
 
   ws.on('close', () => {
-    console.log(`WebSocket closed for session: ${sessionId}`);
+    logger.info(`WebSocket closed for session: ${sessionId}`);
     sessions.delete(sessionId);
+    if (sessionState.ttsStreamer) {
+      sessionState.ttsStreamer.close();
+    }
     // Mark session as ended in DB
-    sql`UPDATE agent_test_sessions SET status = 'ended', ended_at = CURRENT_TIMESTAMP WHERE id = ${sessionId}`.catch(console.error);
+    sql`UPDATE agent_test_sessions SET status = 'ended', ended_at = CURRENT_TIMESTAMP WHERE id = ${sessionId}`.catch(e => logger.error(e));
   });
 };
 
@@ -77,6 +83,15 @@ const handleStartSession = async (sessionState, message) => {
       VALUES (${sessionId}, ${agent.organization_id}, ${agentId}, 'connected')
       ON CONFLICT (id) DO UPDATE SET status = 'connected';
     `;
+    
+    // Initialize TTS Streamer once for the whole session
+    sessionState.ttsStreamer = new SarvamTTSStreamer(
+      sessionState.agentConfig.language === 'en-IN' ? 'en-IN' : 'hi-IN',
+      sessionState.agentConfig.voice.voice_id || 'shubh',
+      (base64) => {
+        ws.send(JSON.stringify({ type: 'audio', audio: base64 }));
+      }
+    );
 
     // Optionally send greeting if configured
     if (aiConfig.greeting_message) {
@@ -86,7 +101,7 @@ const handleStartSession = async (sessionState, message) => {
     }
 
   } catch (err) {
-    console.error('Error starting session:', err);
+    logger.error('Error starting session:', err);
     ws.send(JSON.stringify({ type: 'error', message: 'Failed to initialize session.' }));
   }
 };
@@ -96,11 +111,14 @@ const handleUserAudio = async (sessionState, base64Audio) => {
   
   if (!agentConfig) return;
 
+  const interactionStartTime = Date.now();
+
   try {
     sendStatus(ws, 'processing'); // Processing STT
 
     // 1. STT (Speech to Text)
-    const userText = await SarvamSTTProvider.transcribeAudio(base64Audio, agentConfig.language);
+    const sttResult = await SarvamSTTProvider.transcribeAudio(base64Audio, agentConfig.language);
+    const userText = typeof sttResult === 'object' ? sttResult.transcript : sttResult;
     
     if (!userText || userText.trim() === '') {
       sendStatus(ws, 'listening');
@@ -110,77 +128,136 @@ const handleUserAudio = async (sessionState, base64Audio) => {
     // Emit Live Transcript to UI
     ws.send(JSON.stringify({ type: 'user_transcript', text: userText }));
     
-    // Save User Message to DB
-    await sql`
+    // Save User Message to DB without blocking
+    sql`
       INSERT INTO agent_test_messages (session_id, role, content)
       VALUES (${sessionId}, 'user', ${userText});
-    `;
+    `.catch(e => logger.error('DB Insert Error (user message):', e));
+    
+    logger.info(`[Session ${sessionId}] User: ${userText}`);
 
     // Add to local context
     sessionState.messages.push({ role: 'user', content: userText });
 
     // 2. Generate LLM Response
     sendStatus(ws, 'thinking');
-    await generateAndPlayAIResponse(sessionState, null, false);
+    await generateAndPlayAIResponse(sessionState, null, false, interactionStartTime);
 
   } catch (err) {
-    console.error('Audio processing error:', err);
+    logger.error('Audio processing error:', err);
     sendStatus(ws, 'listening');
   }
 };
 
-const generateAndPlayAIResponse = async (sessionState, forcedResponseText = null, isGreeting = false) => {
+const { SarvamTTSStreamer } = await import('../ai/tts/sarvamTTSStreamer.js');
+
+const generateAndPlayAIResponse = async (sessionState, forcedResponseText = null, isGreeting = false, interactionStartTime = null) => {
   const { ws, sessionId, agentConfig, messages } = sessionState;
   
   try {
     let aiText = forcedResponseText;
+    let fullAiResponse = '';
 
-    if (!aiText) {
-      // Build System Prompt
+    if (aiText) {
+       fullAiResponse = aiText;
+       ws.send(JSON.stringify({ type: 'ai_transcript', text: aiText }));
+       
+       sendStatus(ws, 'speaking');
+       const streamer = sessionState.ttsStreamer;
+       streamer.sendText(aiText);
+       streamer.flush();
+    } else {
       const systemPrompt = `You are an AI assistant.
 Your Name: ${agentConfig.name}
 Your Primary Goal: ${agentConfig.primary_goal}
 Instructions: ${agentConfig.ai.system_prompt}
-Language/Tone: Respond primarily in ${agentConfig.language}. Keep responses conversational, concise, and under 2-3 sentences max. Do NOT use markdown.`;
+Language/Tone: You MUST dynamically match the user's spoken language. If the user speaks to you in English, respond in English. If the user speaks in Hindi or Hinglish, respond in Hindi or Hinglish. Keep responses conversational, concise, and under 2-3 sentences max. Do NOT use markdown.`;
 
-      // Call OpenAI
-      aiText = await OpenAIProvider.generateChatResponse({
-        systemPrompt,
-        messages: messages.slice(-10), // keep last 10 messages for context
-        model: agentConfig.ai.llm_model
-      });
+      sendStatus(ws, 'speaking'); // We start speaking soon
+
+      const streamer = sessionState.ttsStreamer;
+      // Reset streamer timing markers for new response
+      if (streamer) {
+        streamer.firstChunkTime = null;
+        streamer.sendTextTime = null;
+      }
+
+      const llmStartTime = Date.now();
+      let firstTokenReceived = false;
+
+      if (agentConfig.ai.llm_provider === 'gemini') {
+        // Enforce the fastest low-latency model available on your API key
+        const modelName = 'gemini-3.5-flash-lite';
+
+        const stream = await GeminiProvider.generateChatStream({
+          systemPrompt,
+          messages: messages.slice(-6), // Keep context concise for fast prompt evaluation
+          model: modelName
+        });
+
+        let ttsBuffer = '';
+        const sentenceBoundaryRegex = /[\.\?\!\,\n।]/; // Matches end of phrase or sentence
+
+        for await (const chunk of stream) {
+          if (!firstTokenReceived) {
+            firstTokenReceived = true;
+            const ttft = Date.now() - llmStartTime;
+            console.log(`[LATENCY] LLM Time-to-First-Token (TTFT): ${ttft}ms`);
+          }
+
+          const chunkText = chunk.text();
+          fullAiResponse += chunkText;
+          ttsBuffer += chunkText;
+
+          // If the buffer has reached a natural pause (comma, period, question mark, newline, purna viram)
+          // or is getting long (> 50 chars), send the sentence to TTS
+          if (sentenceBoundaryRegex.test(chunkText) || ttsBuffer.length > 50) {
+            streamer.sendText(ttsBuffer);
+            ttsBuffer = '';
+          }
+
+          ws.send(JSON.stringify({ type: 'ai_transcript', text: fullAiResponse }));
+        }
+
+        const llmTotalTime = Date.now() - llmStartTime;
+        console.log(`[LATENCY] LLM Total Generation Time: ${llmTotalTime}ms`);
+
+        // Send any remaining characters
+        if (ttsBuffer.trim()) {
+          streamer.sendText(ttsBuffer);
+        }
+      } else {
+        // Fallback for OpenAI (not streaming implemented here yet)
+        aiText = await OpenAIProvider.generateChatResponse({
+          systemPrompt,
+          messages: messages.slice(-10),
+          model: agentConfig.ai.llm_model
+        });
+        const llmTotalTime = Date.now() - llmStartTime;
+        console.log(`[LATENCY] LLM Total Generation Time (OpenAI): ${llmTotalTime}ms`);
+        fullAiResponse = aiText;
+        streamer.sendText(aiText);
+        ws.send(JSON.stringify({ type: 'ai_transcript', text: fullAiResponse }));
+      }
+      
+      streamer.flush();
+
+      if (interactionStartTime) {
+        const totalTurnaround = Date.now() - interactionStartTime;
+        console.log(`[LATENCY] ★ Total Turnaround Time (Audio In -> Speech Out): ${totalTurnaround}ms`);
+      }
     }
 
-    // Save AI Message to DB
-    await sql`
+    sql`
       INSERT INTO agent_test_messages (session_id, role, content)
-      VALUES (${sessionId}, 'assistant', ${aiText});
-    `;
-
-    sessionState.messages.push({ role: 'assistant', content: aiText });
-
-    // Emit AI Live Transcript
-    ws.send(JSON.stringify({ type: 'ai_transcript', text: aiText }));
-
-    // 3. TTS (Text to Speech)
-    sendStatus(ws, 'speaking');
-    const ttsProvider = new SarvamTTSProvider();
-    const audioBase64 = await ttsProvider.previewVoice({
-      text: aiText,
-      voiceId: agentConfig.voice.voice_id,
-      language: 'hi-IN', // Sarvam requires this or en-IN
-      speed: 1.0 // Future: parse from config
-    });
-
-    // Send Audio to Browser
-    ws.send(JSON.stringify({ type: 'audio', audio: audioBase64 }));
-
-    // Wait for a simulated duration of the audio or let the frontend manage state
-    // For V1, the frontend will tell us when audio is done playing, or we just switch to listening immediately.
-    // Actually, sending 'listening' right away lets frontend buffer the audio and block recording until playback finishes.
+      VALUES (${sessionId}, 'assistant', ${fullAiResponse});
+    `.catch(e => logger.error('DB Insert Error (assistant message):', e));
+    
+    logger.info(`[Session ${sessionId}] AI: ${fullAiResponse}`);
+    sessionState.messages.push({ role: 'assistant', content: fullAiResponse });
 
   } catch (err) {
-    console.error('AI Generation error:', err);
+    logger.error('AI Generation error:', err);
     ws.send(JSON.stringify({ type: 'error', message: 'Failed to generate AI response.' }));
   }
 };

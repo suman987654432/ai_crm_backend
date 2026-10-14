@@ -13,38 +13,38 @@ export class SarvamSTTProvider {
     }
 
     try {
-      // In a real implementation, you might need to convert base64 to a Blob/File 
-      // and send it as multipart/form-data. For now, we mock the REST call 
-      // or send JSON depending on Sarvam's spec.
-      
+      const startTime = Date.now();
       const buffer = Buffer.from(base64Audio, 'base64');
       
       const formData = new FormData();
-      // Polyfill Blob/File logic if needed, or assume Sarvam takes base64 in a specific endpoint.
-      // Since this is a specialized provider, we'll simulate the standard Sarvam transcribe endpoint.
-      
-      // MOCK:
-      // Since we don't have the exact Sarvam STT file upload endpoint spec here, 
-      // we simulate the latency and return a transcription based on successful connection.
-      
-      await new Promise(r => setTimeout(r, 600)); // STT latency simulation
-      return "Main thik hoon, aap bataiye aap meri kaise madad kar sakte hain?";
-      
-      /*
-      const response = await fetch('https://api.sarvam.ai/v1/speech-to-text', {
+      formData.append('file', new Blob([buffer], { type: 'audio/webm' }), 'audio.webm'); 
+      let langCode = 'hi-IN';
+      if (typeof language === 'string') {
+        if (language.toLowerCase().includes('english') && language.toLowerCase().includes('hindi')) {
+          langCode = 'unknown'; // Auto-detect for code-mixed / Hinglish scenarios
+        } else if (language.toLowerCase().includes('english')) {
+          langCode = 'en-IN';
+        }
+      }
+      formData.append('language_code', langCode);
+
+      const response = await fetch('https://api.sarvam.ai/speech-to-text', {
         method: 'POST',
         headers: {
-          'api-subscription-key': config.sarvamApiKey,
-          'Content-Type': 'application/json'
+          'api-subscription-key': config.sarvamApiKey
         },
-        body: JSON.stringify({
-          audio: base64Audio,
-          language: language
-        })
+        body: formData
       });
+
+      const sttDuration = Date.now() - startTime;
       const data = await response.json();
-      return data.text;
-      */
+      
+      if (!response.ok) {
+         throw new Error(`Sarvam STT failed: ${JSON.stringify(data)}`);
+      }
+
+      console.log(`[LATENCY] STT (Sarvam): ${sttDuration}ms | Transcribed: "${data.transcript || ''}"`);
+      return { transcript: data.transcript || '', durationMs: sttDuration };
     } catch (error) {
       console.error('Sarvam STT error:', error);
       throw error;

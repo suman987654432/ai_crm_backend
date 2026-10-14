@@ -1,5 +1,6 @@
 import { VoiceProvider } from '../../voice/voiceProvider.js';
 import { config } from '../../../config/env.js';
+import logger from '../../../utils/logger.js';
 
 const SARVAM_VOICES = [
   // Females
@@ -77,7 +78,7 @@ export class SarvamProvider extends VoiceProvider {
 
     if (!response.ok) {
       const errText = await response.text();
-      console.error('Sarvam TTS Error:', errText);
+      logger.error('Sarvam TTS Error:', errText);
       throw new Error(`Failed to generate audio from Sarvam: ${response.statusText}`);
     }
 

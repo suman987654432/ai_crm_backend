@@ -2,6 +2,7 @@ import http from 'http';
 import app from './src/app.js';
 import { config } from './src/config/env.js';
 import { setupWebSocketServer } from './src/websocket/index.js';
+import logger from './src/utils/logger.js';
 
 const port = config.port;
 
@@ -11,5 +12,5 @@ const server = http.createServer(app);
 setupWebSocketServer(server);
 
 server.listen(port, () => {
-	console.log(`Backend server is running on http://localhost:${port}`);
+	logger.info(`Backend server is running on http://localhost:${port}`);
 });

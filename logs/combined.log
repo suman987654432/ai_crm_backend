@@ -1,0 +1,182 @@
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-09-26 14:49:47"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-09-26 14:50:05"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-09-26 14:50:30"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-09-26 14:51:03"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-09-26 14:53:38"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:53:47"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:53:50"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:53:53"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:53:53"}
+{"level":"info","message":"WebSocket connected for session: 2c0fff98-bf22-4dcb-858b-3b04bda49645","service":"ai-crm-backend","timestamp":"2026-09-26 14:53:53"}
+{"level":"info","message":"WebSocket connected for session: dc64e0fd-b5cb-4eb0-aab2-c6aa31d0903c","service":"ai-crm-backend","timestamp":"2026-09-26 14:53:55"}
+{"level":"info","message":"[Session dc64e0fd-b5cb-4eb0-aab2-c6aa31d0903c] User: Hello.","service":"ai-crm-backend","timestamp":"2026-09-26 14:54:10"}
+{"level":"info","message":"[Session dc64e0fd-b5cb-4eb0-aab2-c6aa31d0903c] AI: Hello Suman Kumar from Bihar! How are you doing today?","service":"ai-crm-backend","timestamp":"2026-09-26 14:54:13"}
+{"level":"info","message":"[Session dc64e0fd-b5cb-4eb0-aab2-c6aa31d0903c] Interruption detected","service":"ai-crm-backend","timestamp":"2026-09-26 14:54:17"}
+{"level":"info","message":"WebSocket closed for session: dc64e0fd-b5cb-4eb0-aab2-c6aa31d0903c","service":"ai-crm-backend","timestamp":"2026-09-26 14:54:57"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/dc64e0fd-b5cb-4eb0-aab2-c6aa31d0903c/end","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:54:57"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:55:15"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:55:15"}
+{"level":"info","message":"WebSocket connected for session: dba97741-5a5d-4330-b3a2-431433ec01b4","service":"ai-crm-backend","timestamp":"2026-09-26 14:55:18"}
+{"level":"info","message":"WebSocket connected for session: e52dea85-08e0-45dd-8d9a-aa37fb2417de","service":"ai-crm-backend","timestamp":"2026-09-26 14:55:18"}
+{"level":"info","message":"[Session e52dea85-08e0-45dd-8d9a-aa37fb2417de] User: Hello.","service":"ai-crm-backend","timestamp":"2026-09-26 14:55:28"}
+{"level":"info","message":"[Session e52dea85-08e0-45dd-8d9a-aa37fb2417de] AI: Hello Suman! How are you doing today?","service":"ai-crm-backend","timestamp":"2026-09-26 14:55:30"}
+{"level":"info","message":"[Session e52dea85-08e0-45dd-8d9a-aa37fb2417de] Interruption detected","service":"ai-crm-backend","timestamp":"2026-09-26 14:55:33"}
+{"level":"info","message":"WebSocket closed for session: e52dea85-08e0-45dd-8d9a-aa37fb2417de","service":"ai-crm-backend","timestamp":"2026-09-26 14:56:03"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/e52dea85-08e0-45dd-8d9a-aa37fb2417de/end","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:56:03"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-09-26 14:57:10"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:58:31"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 14:58:34"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-09-26 15:00:33"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:00:37"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:00:40"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:00:42"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:00:42"}
+{"level":"info","message":"WebSocket connected for session: e8ee0d89-9452-4085-9e32-39d4f4cf8d64","service":"ai-crm-backend","timestamp":"2026-09-26 15:00:43"}
+{"level":"info","message":"WebSocket connected for session: 2cb194b0-9b7c-4c3a-8145-9e03324ccd38","service":"ai-crm-backend","timestamp":"2026-09-26 15:00:45"}
+{"level":"error","message":"Error starting session: agentConfig is not defined","service":"ai-crm-backend","stack":"ReferenceError: agentConfig is not defined\n    at handleStartSession (file:///D:/ai-crm/backend/src/services/voice/VoiceSessionService.js:89:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async WebSocket.<anonymous> (file:///D:/ai-crm/backend/src/services/voice/VoiceSessionService.js:31:9)","timestamp":"2026-09-26 15:00:47"}
+{"level":"error","message":"Error starting session: agentConfig is not defined","service":"ai-crm-backend","stack":"ReferenceError: agentConfig is not defined\n    at handleStartSession (file:///D:/ai-crm/backend/src/services/voice/VoiceSessionService.js:89:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async WebSocket.<anonymous> (file:///D:/ai-crm/backend/src/services/voice/VoiceSessionService.js:31:9)","timestamp":"2026-09-26 15:00:47"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-09-26 15:01:17"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:01:44"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:01:47"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:02:01"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:02:01"}
+{"level":"info","message":"WebSocket connected for session: 4774d171-aeed-400a-93d4-343f09e80045","service":"ai-crm-backend","timestamp":"2026-09-26 15:02:03"}
+{"level":"info","message":"WebSocket connected for session: a7d74c47-a191-42f8-a9ec-2fc369eef3ba","service":"ai-crm-backend","timestamp":"2026-09-26 15:02:03"}
+{"level":"info","message":"[Session a7d74c47-a191-42f8-a9ec-2fc369eef3ba] User: Hello.","service":"ai-crm-backend","timestamp":"2026-09-26 15:02:15"}
+{"level":"info","message":"[Session a7d74c47-a191-42f8-a9ec-2fc369eef3ba] AI: Hello Suman Kumar! How are you doing today, and how can I help you from Bihar?","service":"ai-crm-backend","timestamp":"2026-09-26 15:02:17"}
+{"level":"info","message":"WebSocket closed for session: a7d74c47-a191-42f8-a9ec-2fc369eef3ba","service":"ai-crm-backend","timestamp":"2026-09-26 15:02:18"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/a7d74c47-a191-42f8-a9ec-2fc369eef3ba/end","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:02:18"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-09-26 15:04:44"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:05:13"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:05:16"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:05:40"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:05:40"}
+{"level":"info","message":"WebSocket connected for session: 30ee71a7-2329-466e-b414-ef6290d7f01f","service":"ai-crm-backend","timestamp":"2026-09-26 15:05:43"}
+{"level":"info","message":"WebSocket connected for session: 0889cb6b-51f7-494d-bda3-1003d5e79dfe","service":"ai-crm-backend","timestamp":"2026-09-26 15:05:43"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] User: Hello.","service":"ai-crm-backend","timestamp":"2026-09-26 15:05:51"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] AI: Hello Suman! How are you doing today?","service":"ai-crm-backend","timestamp":"2026-09-26 15:05:53"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] Interruption detected","service":"ai-crm-backend","timestamp":"2026-09-26 15:05:56"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] User: Howdy.","service":"ai-crm-backend","timestamp":"2026-09-26 15:06:05"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] AI: Howdy! All good here, Suman. How are things in Bihar?","service":"ai-crm-backend","timestamp":"2026-09-26 15:06:07"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] Interruption detected","service":"ai-crm-backend","timestamp":"2026-09-26 15:06:11"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] User: I am good how are you?\nHello bhai, tum kaise ho?","service":"ai-crm-backend","timestamp":"2026-09-26 15:06:43"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] AI: Main bhi ekdum badhiya hoon, bhai! Bihar mein sab kaisa chal raha hai?","service":"ai-crm-backend","timestamp":"2026-09-26 15:06:45"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] Interruption detected","service":"ai-crm-backend","timestamp":"2026-09-26 15:06:51"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] User: Sabarhiya.","service":"ai-crm-backend","timestamp":"2026-09-26 15:06:58"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] AI: Sahi hai bhai! Sun kar accha laga. Batao, aaj main aapki kya madad kar sakta hoon?","service":"ai-crm-backend","timestamp":"2026-09-26 15:07:00"}
+{"level":"info","message":"[Session 0889cb6b-51f7-494d-bda3-1003d5e79dfe] Interruption detected","service":"ai-crm-backend","timestamp":"2026-09-26 15:07:07"}
+{"level":"info","message":"WebSocket closed for session: 0889cb6b-51f7-494d-bda3-1003d5e79dfe","service":"ai-crm-backend","timestamp":"2026-09-26 15:07:08"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/0889cb6b-51f7-494d-bda3-1003d5e79dfe/end","query":{},"service":"ai-crm-backend","timestamp":"2026-09-26 15:07:08"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 15:56:52"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 15:58:02"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 15:58:07"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:01:10"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:01:13"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:01:43"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:01:43"}
+{"level":"info","message":"WebSocket connected for session: 5122c829-10c7-4925-8596-3fd9fc0fd17e","service":"ai-crm-backend","timestamp":"2026-10-14 16:01:46"}
+{"level":"info","message":"WebSocket connected for session: 48ea3929-56e6-4a3b-9f94-3cfad9755ae5","service":"ai-crm-backend","timestamp":"2026-10-14 16:01:46"}
+{"level":"info","message":"[Session 48ea3929-56e6-4a3b-9f94-3cfad9755ae5] User: मैं फिर वो सारे क्लाइंट्स को।","service":"ai-crm-backend","timestamp":"2026-10-14 16:02:01"}
+{"level":"info","message":"[Session 48ea3929-56e6-4a3b-9f94-3cfad9755ae5] AI: अरे सुमन कुमार, बिहार से! तो क्या आप उन सारे क्लाइंट्स को फिर से कॉल करने वाले हैं या कोई नया अपडेट देना है?","service":"ai-crm-backend","timestamp":"2026-10-14 16:02:02"}
+{"level":"info","message":"[Session 48ea3929-56e6-4a3b-9f94-3cfad9755ae5] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 16:02:13"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/48ea3929-56e6-4a3b-9f94-3cfad9755ae5/end","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:02:19"}
+{"level":"info","message":"WebSocket closed for session: 48ea3929-56e6-4a3b-9f94-3cfad9755ae5","service":"ai-crm-backend","timestamp":"2026-10-14 16:02:19"}
+{"level":"info","message":"WebSocket closed for session: 5122c829-10c7-4925-8596-3fd9fc0fd17e","service":"ai-crm-backend","timestamp":"2026-10-14 16:20:07"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 16:29:36"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:29:39"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:29:44"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 16:37:37"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 16:37:47"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 16:38:00"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:49:19"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:49:19"}
+{"level":"info","message":"WebSocket connected for session: 6dc0213c-29da-4e29-b6c2-d9aa9a220bd1","service":"ai-crm-backend","timestamp":"2026-10-14 16:49:22"}
+{"level":"info","message":"WebSocket connected for session: f4dbd970-fd62-488e-946e-8af7adc57d99","service":"ai-crm-backend","timestamp":"2026-10-14 16:49:22"}
+{"level":"info","message":"[Session f4dbd970-fd62-488e-946e-8af7adc57d99] User: Hello.","service":"ai-crm-backend","timestamp":"2026-10-14 16:49:33"}
+{"level":"info","message":"[Session f4dbd970-fd62-488e-946e-8af7adc57d99] AI: Hello Suman Kumar from Bihar! I am doing well, how can I help you today?","service":"ai-crm-backend","timestamp":"2026-10-14 16:49:34"}
+{"level":"info","message":"[Session f4dbd970-fd62-488e-946e-8af7adc57d99] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 16:49:42"}
+{"level":"info","message":"[Session f4dbd970-fd62-488e-946e-8af7adc57d99] User: How are you?","service":"ai-crm-backend","timestamp":"2026-10-14 16:49:49"}
+{"level":"info","message":"[Session f4dbd970-fd62-488e-946e-8af7adc57d99] AI: I am doing great, Suman! How are things with you in Bihar?","service":"ai-crm-backend","timestamp":"2026-10-14 16:49:50"}
+{"level":"info","message":"[Session f4dbd970-fd62-488e-946e-8af7adc57d99] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 16:49:54"}
+{"level":"info","message":"[Session f4dbd970-fd62-488e-946e-8af7adc57d99] User: करेंसी आएगी ना।","service":"ai-crm-backend","timestamp":"2026-10-14 16:50:11"}
+{"level":"info","message":"[Session f4dbd970-fd62-488e-946e-8af7adc57d99] AI: हाँ बिल्कुल, करेंसी आ जाएगी। आप इसके बारे में और क्या जानना चाहते हैं?","service":"ai-crm-backend","timestamp":"2026-10-14 16:50:13"}
+{"level":"info","message":"WebSocket closed for session: f4dbd970-fd62-488e-946e-8af7adc57d99","service":"ai-crm-backend","timestamp":"2026-10-14 16:50:15"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/f4dbd970-fd62-488e-946e-8af7adc57d99/end","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:50:15"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 16:52:52"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 16:53:00"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 16:53:08"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 16:53:27"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:56:34"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 16:56:37"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 17:18:20"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:18:32"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:18:35"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:18:39"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:18:39"}
+{"level":"info","message":"WebSocket connected for session: 5ceb3c0c-c5a5-42b7-907b-e6c1c314700e","service":"ai-crm-backend","timestamp":"2026-10-14 17:18:39"}
+{"level":"info","message":"WebSocket connected for session: bcd5037a-a3f7-45d2-8654-60b09517ea2c","service":"ai-crm-backend","timestamp":"2026-10-14 17:18:41"}
+{"level":"info","message":"[Session bcd5037a-a3f7-45d2-8654-60b09517ea2c] User: Hello.","service":"ai-crm-backend","timestamp":"2026-10-14 17:18:49"}
+{"level":"info","message":"[Session bcd5037a-a3f7-45d2-8654-60b09517ea2c] AI: Hello Suman Kumar from Bihar! I am doing well, thanks for asking. How can I help you today?","service":"ai-crm-backend","timestamp":"2026-10-14 17:18:58"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/bcd5037a-a3f7-45d2-8654-60b09517ea2c/end","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:19:40"}
+{"level":"info","message":"WebSocket closed for session: bcd5037a-a3f7-45d2-8654-60b09517ea2c","service":"ai-crm-backend","timestamp":"2026-10-14 17:19:40"}
+{"level":"info","message":"WebSocket closed for session: 5ceb3c0c-c5a5-42b7-907b-e6c1c314700e","service":"ai-crm-backend","timestamp":"2026-10-14 17:20:39"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:20:40"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:20:43"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 17:20:48"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 17:21:27"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 17:21:49"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:21:53"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:21:53"}
+{"level":"info","message":"WebSocket connected for session: 28a60cb8-9a06-47d8-88f5-c60ab25457d8","service":"ai-crm-backend","timestamp":"2026-10-14 17:21:56"}
+{"level":"info","message":"WebSocket connected for session: 2234f421-ef0c-402c-b3fa-ef09c466f8d4","service":"ai-crm-backend","timestamp":"2026-10-14 17:21:56"}
+{"level":"info","message":"[Session 2234f421-ef0c-402c-b3fa-ef09c466f8d4] User: Hello.","service":"ai-crm-backend","timestamp":"2026-10-14 17:22:01"}
+{"level":"error","message":"AI Generation error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.","service":"ai-crm-backend","stack":"Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.\n    at handleResponseNotOk (file:///D:/ai-crm/backend/node_modules/@google/generative-ai/dist/index.mjs:432:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async makeRequest (file:///D:/ai-crm/backend/node_modules/@google/generative-ai/dist/index.mjs:401:9)\n    at async generateContentStream (file:///D:/ai-crm/backend/node_modules/@google/generative-ai/dist/index.mjs:860:22)","status":404,"statusText":"Not Found","timestamp":"2026-10-14 17:22:01"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/2234f421-ef0c-402c-b3fa-ef09c466f8d4/end","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:22:21"}
+{"level":"info","message":"WebSocket closed for session: 2234f421-ef0c-402c-b3fa-ef09c466f8d4","service":"ai-crm-backend","timestamp":"2026-10-14 17:22:21"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:22:41"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:22:41"}
+{"level":"info","message":"WebSocket connected for session: 0d001899-3a3c-4693-859c-ae52515ca04a","service":"ai-crm-backend","timestamp":"2026-10-14 17:22:45"}
+{"level":"info","message":"WebSocket connected for session: 3fe6741d-5717-45ec-8791-6b0b7e194bb5","service":"ai-crm-backend","timestamp":"2026-10-14 17:22:45"}
+{"level":"info","message":"[Session 3fe6741d-5717-45ec-8791-6b0b7e194bb5] User: Hello.","service":"ai-crm-backend","timestamp":"2026-10-14 17:22:55"}
+{"level":"error","message":"AI Generation error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.","service":"ai-crm-backend","stack":"Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.\n    at handleResponseNotOk (file:///D:/ai-crm/backend/node_modules/@google/generative-ai/dist/index.mjs:432:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async makeRequest (file:///D:/ai-crm/backend/node_modules/@google/generative-ai/dist/index.mjs:401:9)\n    at async generateContentStream (file:///D:/ai-crm/backend/node_modules/@google/generative-ai/dist/index.mjs:860:22)","status":404,"statusText":"Not Found","timestamp":"2026-10-14 17:22:55"}
+{"level":"info","message":"WebSocket closed for session: 3fe6741d-5717-45ec-8791-6b0b7e194bb5","service":"ai-crm-backend","timestamp":"2026-10-14 17:23:02"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/3fe6741d-5717-45ec-8791-6b0b7e194bb5/end","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:23:02"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 17:23:47"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 17:23:57"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 17:24:07"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:24:32"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:24:32"}
+{"level":"info","message":"WebSocket connected for session: 10604edf-2526-478e-9f19-a7caa462b6c6","service":"ai-crm-backend","timestamp":"2026-10-14 17:24:36"}
+{"level":"info","message":"WebSocket connected for session: 1632a01f-9098-46ea-8197-9d0e97b5d01b","service":"ai-crm-backend","timestamp":"2026-10-14 17:24:36"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] User: Hello.","service":"ai-crm-backend","timestamp":"2026-10-14 17:24:42"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] AI: Hello Suman Kumar from Bihar! I am doing well, thanks for asking. How can I help you today?","service":"ai-crm-backend","timestamp":"2026-10-14 17:24:49"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 17:24:55"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] User: Can we earn?","service":"ai-crm-backend","timestamp":"2026-10-14 17:24:59"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] AI: Yes, absolutely! You can earn money online through various skills like writing, coding, or freelancing. What kind of work are you interested in?","service":"ai-crm-backend","timestamp":"2026-10-14 17:25:07"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 17:25:17"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] User: कितना बचा है वो?","service":"ai-crm-backend","timestamp":"2026-10-14 17:25:22"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] AI: आप किस चीज़ के बारे में बात कर रहे हैं? कृपया थोड़ा सा साफ बताइए ताकि मैं सही जवाब दे सकूँ।","service":"ai-crm-backend","timestamp":"2026-10-14 17:25:33"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 17:25:40"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] User: I am interested in freelancing.","service":"ai-crm-backend","timestamp":"2026-10-14 17:25:46"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] AI: Freelancing is a great choice! You can start on platforms like Upwork or Fiverr by offering skills like writing, designing, or coding.","service":"ai-crm-backend","timestamp":"2026-10-14 17:25:53"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 17:26:03"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] User: Thank you.","service":"ai-crm-backend","timestamp":"2026-10-14 17:26:08"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] AI: You're very welcome, Suman! Let me know if you need any more help getting started with freelancing.","service":"ai-crm-backend","timestamp":"2026-10-14 17:26:17"}
+{"level":"info","message":"[Session 1632a01f-9098-46ea-8197-9d0e97b5d01b] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 17:26:23"}
+{"level":"info","message":"WebSocket closed for session: 1632a01f-9098-46ea-8197-9d0e97b5d01b","service":"ai-crm-backend","timestamp":"2026-10-14 17:26:25"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/test-sessions/1632a01f-9098-46ea-8197-9d0e97b5d01b/end","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:26:25"}
+{"level":"info","message":"WebSocket closed for session: 10604edf-2526-478e-9f19-a7caa462b6c6","service":"ai-crm-backend","timestamp":"2026-10-14 17:28:30"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:28:31"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:28:33"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-14 17:43:34"}
+{"ip":"::1","level":"info","message":"Incoming Request: POST /api/v1/agents/077cb403-b443-4132-9bfd-6c7ee150fa4c/test-session","query":{},"service":"ai-crm-backend","timestamp":"2026-10-14 17:45:25"}
+{"level":"info","message":"WebSocket connected for session: 5207bce8-add1-435f-81ef-5fe746507bad","service":"ai-crm-backend","timestamp":"2026-10-14 17:45:28"}
+{"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] User: Amit Shah.","service":"ai-crm-backend","timestamp":"2026-10-14 17:45:35"}
+{"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] AI: Amit Shah ji desh ke Home Minister hain. Par hum toh aapse baat kar rahe hain, Suman ji! Aap bataiye, Bihar mein sab kaisa chal raha hai?","service":"ai-crm-backend","timestamp":"2026-10-14 17:45:36"}
+{"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 17:45:46"}
+{"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] User: हाँ, वो शायद क्लास लेने गए। अभी मेरी लास्ट टाइम करवाती हुई थी, तो आएंगे तो मैं।","service":"ai-crm-backend","timestamp":"2026-10-14 17:45:52"}
+{"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] AI: Achha, theek hai Suman ji! Jab aapke sir class se aa jayein, tab baat kar lijiyega. Tab tak aap bataiye, aap padhai ya kuch aur kaam kar rahe hain Bihar mein?","service":"ai-crm-backend","timestamp":"2026-10-14 17:45:53"}
+{"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] Interruption detected","service":"ai-crm-backend","timestamp":"2026-10-14 17:46:05"}
+{"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] User: अरे, ऐकतो. ओके, ओके, बाय.","service":"ai-crm-backend","timestamp":"2026-10-14 17:46:08"}
+{"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] AI: Ok Suman ji, bye! Phir kabhi baat karte hain.","service":"ai-crm-backend","timestamp":"2026-10-14 17:46:10"}
+{"level":"info","message":"WebSocket closed for session: 5207bce8-add1-435f-81ef-5fe746507bad","service":"ai-crm-backend","timestamp":"2026-10-14 17:46:12"}

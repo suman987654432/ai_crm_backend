@@ -1,5 +1,6 @@
 import { WebSocketServer } from 'ws';
 import { handleNewConnection } from '../services/voice/VoiceSessionService.js';
+import logger from '../utils/logger.js';
 
 export const setupWebSocketServer = (server) => {
   const wss = new WebSocketServer({ noServer: true });
@@ -21,7 +22,7 @@ export const setupWebSocketServer = (server) => {
   });
 
   wss.on('connection', (ws, request, sessionId) => {
-    console.log(`WebSocket connected for session: ${sessionId}`);
+    logger.info(`WebSocket connected for session: ${sessionId}`);
     handleNewConnection(ws, sessionId);
   });
 };
