@@ -14,7 +14,7 @@ export class GeminiProvider {
   static async generateChatResponse({ systemPrompt, messages, model = 'gemini-2.5-flash' }) {
     if (!config.geminiApiKey) {
       console.warn('No GEMINI_API_KEY found, returning a dummy response.');
-      return 'Yeh ek dummy Gemini response hai, kyunki API key set nahi hai.';
+      return 'this is dummy responnd';
     }
 
     try {

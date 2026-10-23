@@ -180,3 +180,6 @@
 {"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] User: अरे, ऐकतो. ओके, ओके, बाय.","service":"ai-crm-backend","timestamp":"2026-10-14 17:46:08"}
 {"level":"info","message":"[Session 5207bce8-add1-435f-81ef-5fe746507bad] AI: Ok Suman ji, bye! Phir kabhi baat karte hain.","service":"ai-crm-backend","timestamp":"2026-10-14 17:46:10"}
 {"level":"info","message":"WebSocket closed for session: 5207bce8-add1-435f-81ef-5fe746507bad","service":"ai-crm-backend","timestamp":"2026-10-14 17:46:12"}
+{"level":"info","message":"Backend server is running on http://localhost:5000","service":"ai-crm-backend","timestamp":"2026-10-23 13:56:31"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-23 13:57:05"}
+{"ip":"::1","level":"info","message":"Incoming Request: GET /api/v1/agents","query":{},"service":"ai-crm-backend","timestamp":"2026-10-23 13:57:11"}
