@@ -43,7 +43,12 @@ export class GeminiProvider {
         }
       }
 
-      const chat = generativeModel.startChat({
+    // Gemini requires that the first message in chat history MUST have role 'user'
+    while (formattedHistory.length > 0 && formattedHistory[0].role !== 'user') {
+      formattedHistory.shift();
+    }
+
+    const chat = generativeModel.startChat({
         history: formattedHistory,
         generationConfig: {
           maxOutputTokens: 150,
@@ -77,13 +82,18 @@ export class GeminiProvider {
       if (msg.role === 'system') continue;
       
       if (i === messages.length - 1 && msg.role === 'user') {
-          latestUserMessage = msg.content;
+        latestUserMessage = msg.content;
       } else {
-          formattedHistory.push({
-              role: msg.role === 'assistant' ? 'model' : 'user',
-              parts: [{ text: msg.content }]
-          });
+        formattedHistory.push({
+          role: msg.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: msg.content || ' ' }]
+        });
       }
+    }
+
+    // Gemini requires that the first message in chat history MUST have role 'user'
+    while (formattedHistory.length > 0 && formattedHistory[0].role !== 'user') {
+      formattedHistory.shift();
     }
 
     const chat = generativeModel.startChat({
